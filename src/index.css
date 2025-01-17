@@ -1,0 +1,43 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;  
+  --color-1: #da3f2b;
+  --color-2: #f47b1f;
+  --color-3: #f9b548;
+  --color-4: #f1c84b;
+  --color-5: #7a4d1a;
+  color: var(--color-5);
+  background-color: var(--color-4);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root, .App {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-5);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-2);
+}
+
+h1 {
+  font-size: 2em
+}
+
+
