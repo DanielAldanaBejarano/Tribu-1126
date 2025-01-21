@@ -22,10 +22,6 @@ html, body, #root, .App {
   height: 100%;
 }
 
-body {
-  margin: 0;
-  height: 100%;
-}
 
 a {
   font-weight: 500;

@@ -1,0 +1,11 @@
+.carousel.flat {
+    border: white;
+}
+
+.carousel-div {
+    height: 50px;
+}
+
+carousel-control-prev {
+    width: 10px;
+}

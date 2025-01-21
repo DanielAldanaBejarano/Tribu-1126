@@ -3,9 +3,8 @@ import "./Navbar.css";
 import logo from "../../assets/logo.png";
 
 function Navbar() {
+  
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log(isOpen);
 
   return (
     <nav className="navbar">
