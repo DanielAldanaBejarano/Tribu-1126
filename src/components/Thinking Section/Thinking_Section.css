@@ -1,0 +1,10 @@
+.thinking-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.thinking-btn{
+    background-color: var(--color-2) !important;
+  }

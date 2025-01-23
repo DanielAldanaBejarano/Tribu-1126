@@ -1,0 +1,11 @@
+.ritual-section {   
+    height: 100% !important;
+}
+
+.ritual-tabs {
+    display: flex;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    gap: 10px;
+    padding: 10px 0;
+}

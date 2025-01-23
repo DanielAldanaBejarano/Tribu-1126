@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "./Navbar_Section.css";
 import logo from "../../assets/logo.png";
 
-function Navbar() {
+function Navbar_Section() {
   
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +13,7 @@ function Navbar() {
       </a>
       <div className="navbar-btn-div">
         <button id="navbar-btn" onClick={() => setIsOpen(!isOpen)}>
-          Menú
+          Más
         </button>        
       </div>
       {isOpen && (
@@ -29,4 +29,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar_Section;

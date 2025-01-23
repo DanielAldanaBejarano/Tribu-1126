@@ -1,0 +1,18 @@
+.plan-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.plan-img {
+    height: 15%;
+  background-image: url(../../assets/header_img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.plan-btn {
+  background-color: var(--color-4) !important;
+}

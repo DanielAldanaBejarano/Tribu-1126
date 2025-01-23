@@ -1,24 +1,13 @@
 .navbar {
-  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   height: 15%;
-  background-color: var(--color-1);
+  background-color: var(--color-3);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    display: flex;
-  }
-}
-
 .logo {
-  height: 3em;
-  width: 3em;
-  padding: 1em;
+  margin-left: 5vw;
 }
 
 .nav-bar-btn-div {
@@ -27,7 +16,7 @@
 
 #navbar-btn {
   margin-right: 1em;
-  background-color: var(--color-4);
+  background-color: var(--color-2);
   color: var(--color-1);
   border-radius: 8px;
   border: 1px solid transparent;
