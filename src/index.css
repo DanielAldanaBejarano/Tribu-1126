@@ -13,17 +13,7 @@
 html, body, #root, .App {
   height: 100%;  
   font-family: "Labrada", sans-serif;
+  color: var(--color-3);
 }
-
-
-a {
-  font-weight: 500;
-  color: var(--color-5);
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--color-2);
-}
-
 
 

@@ -1,21 +1,9 @@
-h1, h2, h3, h4, h5, h6, p {
-  color: var(--color-3) !important;
+:root {
   text-align: center;
+  
 }
-
-a {
-  font-weight: 500;
-  color: var(--color-5);
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--color-2);
-}
-
-h1 {
-  font-weight: 900 !important;
-  margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
+h1 {  
+  font-weight: bolder !important;
 }
 
 .show-element {

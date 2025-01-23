@@ -11,11 +11,9 @@ function Navbar_Section() {
       <a href="/">
         <img className="logo" src={logo}></img>
       </a>
-      <div className="navbar-btn-div">
-        <button id="navbar-btn" onClick={() => setIsOpen(!isOpen)}>
+      <button id="navbar-btn" onClick={() => setIsOpen(!isOpen)}>
           Más
-        </button>        
-      </div>
+        </button>  
       {isOpen && (
           <div className="navbar-links-div">
             <a className="navbar-link" href="/products">Sección 1</a>
