@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 function Plan_Section() {
   return (
     <div className="plan-section p-4">
-      <div className="plan-img"></div>
       <h1 className="my-4"> Plan Tributo </h1>
       <Accordion defaultActiveKey="" flush>
         <Accordion.Item eventKey="0">
@@ -45,7 +44,6 @@ function Plan_Section() {
       </Accordion>
       <Button className="plan-btn"> Conoce nuestro Ritual
         </Button>
-        <div className="plan-img"></div>
     </div>
   );
 }

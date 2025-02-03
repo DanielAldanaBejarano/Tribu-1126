@@ -109,7 +109,7 @@ const ResponsiveTabbedList = () => {
               padding: "10px 20px",
               cursor: "pointer",
               backgroundColor:
-                dataList[activeIndex].id === item.id ? "#007bff" : "#e0e0e0",
+                dataList[activeIndex].id === item.id ? "var(--color-2)" : "#e0e0e0",
               color: dataList[activeIndex].id === item.id ? "#fff" : "#000",
               border: "1px solid #ccc",
               borderRadius: "5px",
