@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar_Section.css";
 import logo from "../../assets/logo.png";
+import { FiAlignJustify } from "react-icons/fi";
 
 function Navbar_Section() {
   
@@ -12,7 +13,7 @@ function Navbar_Section() {
         <img className="logo" src={logo}></img>
       </a>
       <button id="navbar-btn" onClick={() => setIsOpen(!isOpen)}>
-          Más
+          <FiAlignJustify size="2rem"></FiAlignJustify>
         </button>  
       {isOpen && (
           <div className="navbar-links-div">

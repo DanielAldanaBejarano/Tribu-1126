@@ -4,7 +4,7 @@ import '../Thinking Section/Thinking_Section.css'
 
 const Thinking_Section = () => {
   return (
-    <div className="thinking-section p-5">
+    <div className="thinking-section mx-3">
       <h2>Antes de que tomes tu decisión...</h2>
         <p className="">Tendrás todo el tiempo para </p>
         <h1 className="">Pensarlo</h1>

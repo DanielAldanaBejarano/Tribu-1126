@@ -5,7 +5,7 @@ import './Journey_Section.css'
 
 function CarouselSection() {
   return (
-    <div className="carousel-div text-center">
+    <div className="carousel-div text-center mx-3">
         <h1 className="my-4"> Nuestro viaje juntos se compone de 4 etapas</h1>
       <Carousel>
         <Carousel.Item interval={5000}>

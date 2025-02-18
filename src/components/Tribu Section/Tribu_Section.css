@@ -1,1 +1,9 @@
-.Tribu {}
+.card-group {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.card {
+    border-radius: 20px !important;
+    margin-top: 5vh;
+}

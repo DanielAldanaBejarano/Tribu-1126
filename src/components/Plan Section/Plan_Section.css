@@ -13,6 +13,10 @@
   background-size: cover;
 }
 
+.plan-btn {
+  background-color: var(--color-3) !important;
+}
+
 .thinking-btn{
   background-color: var(--color-3) !important;
 }

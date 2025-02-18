@@ -42,7 +42,7 @@ function Plan_Section() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <Button className="plan-btn"> Conoce nuestro Ritual
+      <Button className="plan-btn my-3"> Conoce nuestro Ritual
         </Button>
     </div>
   );

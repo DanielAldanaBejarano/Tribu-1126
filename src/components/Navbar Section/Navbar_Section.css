@@ -2,31 +2,29 @@
   position: absolute;
   position: sticky;
   z-index: 3;
-  top: 0;
-  width: 100%;
-  padding:0% !important;
-  background-color: var(--color-2); 
-}
-
-.logo {
-  opacity: 1 !important;
+  padding: 0 !important; 
+  background-color: var(--color-3); 
+  
+  .logo {
+    height: 3rem;
+  }
 }
 
 #navbar-btn {
-  padding: 1em;
+  padding: 0%;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  border-left-style: solid;
+  border-color: var(--color-5);
+  cursor: pointer;
   background-color: var(--color-3);
   color: var(--color-4);
-  border: 1px solid transparent;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#navbar-btn:hover, :focus {
-  background-color: var(--color-5);
-  color: var(--color-1);
+#navbar-btn:focus {
+  background-color: var(--color-2);
+  color: var(--color-4);
 }
 
 .navbar-links-div {
@@ -35,16 +33,21 @@
   flex-direction: column;
   right: 0;
   top: 100%;
-  padding: 1em;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 0 5px;
-  background-color: var(--color-5);
   z-index: 10;
+  background-color: var(--color-2);
 }
 
-.navbar-link {
-  margin: 0.5em;
+.navbar-link {  
+  border-style: solid;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-width: 1.5px;
   color: var(--color-5);
+}
+
+.navbar-link:hover {
+  background-color: var(--color-5);
+  color: var(--color-1); 
 }
 
 

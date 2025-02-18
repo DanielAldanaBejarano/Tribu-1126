@@ -4,7 +4,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 
 const Map_Section = () => {
   return (
-    <div>
+    <div className="mx-3">
       <h1>Nuestros campamentos</h1>
       <CardGroup>
         <Card>

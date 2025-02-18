@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Ritual_Section.css";
 
 const ResponsiveTabbedList = () => {
   // Lista de objetos para mostrar
@@ -74,6 +75,9 @@ const ResponsiveTabbedList = () => {
   // Estado para rastrear si la vista es móvil o no
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // Estado para manejar el voltear de la tarjeta
+  const [flipped, setFlipped] = useState(false);
+
   // Evento para actualizar `isMobile` cuando la ventana cambia de tamaño
   useEffect(() => {
     const handleResize = () => {
@@ -86,20 +90,26 @@ const ResponsiveTabbedList = () => {
 
   // Calcular las pestañas visibles dinámicamente (para móvil)
   const getVisibleTabs = () => {
-    if (activeIndex === 0) return dataList.slice(0, 3); // Al principio
-    if (activeIndex === dataList.length - 1) {
-      return dataList.slice(dataList.length - 3); // Al final
-    }
-    return dataList.slice(activeIndex - 1, activeIndex + 2); // Anterior, actual, siguiente
+    const total = dataList.length;
+
+    return [
+      dataList[(activeIndex - 1 + total) % total], // Pestaña anterior (Cíclica)
+      dataList[activeIndex], // Pestaña actual
+      dataList[(activeIndex + 1) % total], // Pestaña siguiente (Cíclica)
+    ];
   };
 
   // Determinar las pestañas visibles según si es móvil o no
   const visibleTabs = isMobile ? getVisibleTabs() : dataList;
 
-  return (
-    <div>
-      <h1>Bienvenida a Ritual</h1>
+  // Función para alternar el estado del voltear
+  const handleFlip = () => {
+    setFlipped(!flipped);
+  };
 
+  return (
+    <div className="mx-3">
+      <h1>Bienvenida a Ritual</h1>
       {/* Barra de pestañas */}
       <div style={{}}>
         {visibleTabs.map((item) => (
@@ -109,7 +119,9 @@ const ResponsiveTabbedList = () => {
               padding: "10px 20px",
               cursor: "pointer",
               backgroundColor:
-                dataList[activeIndex].id === item.id ? "var(--color-2)" : "#e0e0e0",
+                dataList[activeIndex].id === item.id
+                  ? "var(--color-2)"
+                  : "#e0e0e0",
               color: dataList[activeIndex].id === item.id ? "#fff" : "#000",
               border: "1px solid #ccc",
               borderRadius: "5px",
@@ -130,11 +142,57 @@ const ResponsiveTabbedList = () => {
           borderRadius: "5px",
         }}
       >
-        <h2>{dataList[activeIndex].subtitle}</h2>
-        <p>{dataList[activeIndex].description_1}</p>
-        <p>{dataList[activeIndex].description_2}</p>
-        <p>{dataList[activeIndex].description_3}</p>
-        <img style={{width: "100%", height: "100%"}} src={dataList[activeIndex].img}></img>
+        <div className="card" onClick={handleFlip}>
+          <div
+            className={`card-inner ${flipped ? "flipped" : ""}`}
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "relative",
+              transformStyle: "preserve-3d",
+              transition: "transform 0.6s",
+            }}
+          >
+            <div
+              className="card-front"
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                style={{ width: "100%", height: "100%" }}
+                src={dataList[activeIndex].img}
+                alt="Card Front"
+              />
+            </div>
+
+            <div
+              className="card-back"
+              style={{
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "lightcoral",
+                transform: "rotateY(180deg)",
+              }}
+            >
+              <h2>{dataList[activeIndex].subtitle}</h2>
+              <p>{dataList[activeIndex].description_1}</p>
+              <p>{dataList[activeIndex].description_2}</p>
+              <p>{dataList[activeIndex].description_3}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
