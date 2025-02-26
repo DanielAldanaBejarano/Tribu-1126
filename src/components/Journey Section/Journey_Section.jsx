@@ -1,12 +1,13 @@
 import Carousel from "react-bootstrap/Carousel";
 import Carousel_Img_1 from "../../assets/carousel_img_1.jpg";
-import './Journey_Section.css'
-
+import "./Journey_Section.css";
+import patron from "../../assets/patron_1.png";
 
 function CarouselSection() {
   return (
-    <div className="carousel-div text-center mx-3">
-        <h1 className="my-4"> Nuestro viaje juntos se compone de 4 etapas</h1>
+    <div className="carousel-div text-center">
+      <img src={patron} className="separador"></img>
+      <h1 className="my-4"> Nuestro viaje juntos se compone de 4 etapas</h1>
       <Carousel>
         <Carousel.Item interval={5000}>
           <div className="text-center">
@@ -49,6 +50,7 @@ function CarouselSection() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <img src={patron} className="separador"></img>
     </div>
   );
 }

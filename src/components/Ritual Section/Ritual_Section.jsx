@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Ritual_Section.css";
+import patron from "../../assets/patron_1.png";
 
 const ResponsiveTabbedList = () => {
   // Lista de objetos para mostrar
@@ -108,20 +109,20 @@ const ResponsiveTabbedList = () => {
   };
 
   return (
-    <div className="mx-3">
+    <div className="">
       <h1>Bienvenida a Ritual</h1>
       {/* Barra de pestañas */}
-      <div style={{}}>
+      <div className="arrows-container mx-3">
         {visibleTabs.map((item) => (
           <button
+            className="arrow"
             key={item.id}
             style={{
-              padding: "10px 20px",
               cursor: "pointer",
               backgroundColor:
                 dataList[activeIndex].id === item.id
                   ? "var(--color-2)"
-                  : "#e0e0e0",
+                  : "var(--color-1)",
               color: dataList[activeIndex].id === item.id ? "#fff" : "#000",
               border: "1px solid #ccc",
               borderRadius: "5px",
@@ -135,65 +136,61 @@ const ResponsiveTabbedList = () => {
       </div>
 
       {/* Mostrar contenido del objeto activo */}
-      <div
-        style={{
-          padding: "20px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-        }}
-      >
-        <div className="card" onClick={handleFlip}>
+
+      <div className="card" onClick={handleFlip}>
+        <div
+          className={`card-inner ${flipped ? "flipped" : ""}`}
+          style={{
+            position: "relative",
+            transformStyle: "preserve-3d",
+            transition: "transform 1s",
+            height: "100%",
+            width: "100%",
+          }}
+        >
           <div
-            className={`card-inner ${flipped ? "flipped" : ""}`}
+            className="card-front"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              backfaceVisibility: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              className="card-img"
+              src={dataList[activeIndex].img}
+              alt="Card Front"
+              object-fit="cover"
+              height="100%"
+              width="100%"
+            />
+          </div>
+
+          <div
+            className="card-back"
             style={{
               width: "100%",
               height: "100%",
-              position: "relative",
-              transformStyle: "preserve-3d",
-              transition: "transform 0.6s",
+              backfaceVisibility: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              transform: "rotateY(180deg)",
             }}
           >
-            <div
-              className="card-front"
-              style={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                backfaceVisibility: "hidden",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={dataList[activeIndex].img}
-                alt="Card Front"
-              />
-            </div>
-
-            <div
-              className="card-back"
-              style={{
-                width: "100%",
-                height: "100%",
-                backfaceVisibility: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "lightcoral",
-                transform: "rotateY(180deg)",
-              }}
-            >
-              <h2>{dataList[activeIndex].subtitle}</h2>
-              <p>{dataList[activeIndex].description_1}</p>
-              <p>{dataList[activeIndex].description_2}</p>
-              <p>{dataList[activeIndex].description_3}</p>
-            </div>
+            <h2>{dataList[activeIndex].subtitle}</h2>
+            <p>{dataList[activeIndex].description_1}</p>
+            <p>{dataList[activeIndex].description_2}</p>
+            <p>{dataList[activeIndex].description_3}</p>
           </div>
         </div>
       </div>
+      <img src={patron} className="separador"></img>
     </div>
   );
 };

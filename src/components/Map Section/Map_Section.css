@@ -1,0 +1,21 @@
+.camp-img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.accordion-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-button::after{
+    display: none;
+}
+
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-2) !important; /* Active state background */
+  h3 {
+    color: var(--color-4);
+  }
+}

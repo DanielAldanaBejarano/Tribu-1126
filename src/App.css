@@ -13,3 +13,12 @@ h1 {
 .hide-element {
   display: none;
 }
+
+.separador {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  object-fit: cover;
+  max-width: none;
+  width: 100%;
+  height: 5rem;
+}
