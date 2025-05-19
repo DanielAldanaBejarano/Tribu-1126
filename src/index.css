@@ -1,9 +1,11 @@
 :root {  
-  --color-1: #D9AE89;
-  --color-2: #A66844;
-  --color-3: #734230;
-  --color-4: #F2F0F0;
-  --color-5: #40251F;
+  --color-1: #3D3E40;
+  --color-2: #BFB3A8;
+  --color-3: #402D22;
+  --color-4: #D8D9D7;
+  --color-5: #8C7C6B;
+  
+  
   background-color: var(--color-4);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +15,6 @@
 html, body, #root, .App {
   height: 100%;  
   font-family: "Labrada", sans-serif;
-  color: var(--color-3);
 }
 
 

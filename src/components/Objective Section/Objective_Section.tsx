@@ -1,14 +1,16 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Card from "react-bootstrap/Card"
+import patron from "../../assets/patron_1.png";
 
-const Objective_Section = () => {
+const Objective_Section = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => {
   return (
-    <div>
+    <div ref= {ref}>
       <h1 className="m-5">Conoce más sobre Tribu 1126</h1>
-      <Card className="m-5">El objetivo de esta tribu es ...... </Card>
-      <div className="m-5">Texto sobre la Tribu 1126. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</div>
+      <Card className=""> MISIÓN </Card>
+      <div className="">La misión de nuestra tribu es, más que llevar un estudio webcam, crear una tribu de colaboradores que cosechan juntos</div>
+      <img src={patron} className="separador" alt="Separador" />
     </div>
   );
-};
+});
 
 export default Objective_Section;

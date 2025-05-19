@@ -17,7 +17,6 @@
 
 #navbar-btn {
   padding: 0%;
-  height: 3.5rem;
   width: 4rem;
   border: none;
   border-left-style: solid;
@@ -40,7 +39,7 @@
   right: 0;
   top: 100%;
   z-index: 10;
-  background-color: var(--color-2);
+  background-color: var(--color-3);
 }
 
 .navbar-link {  
@@ -49,12 +48,12 @@
   padding: 0.5rem;
   padding-top: 0;
   border-width: 1.5px;
-  color: var(--color-5);
+  color: var(--color-2);
 }
 
 .navbar-link:hover {
-  background-color: var(--color-5);
-  color: var(--color-1); 
+  background-color: var(--color-2);
+  color: var(--color-4); 
 }
 
 

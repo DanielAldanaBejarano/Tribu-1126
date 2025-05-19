@@ -1,198 +1,129 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Ritual_Section.css";
-import patron from "../../assets/patron_1.png";
+import icon1 from '../../assets/icon_1.png';
+import icon2 from '../../assets/icon_2.png';
+import icon3 from '../../assets/icon_3.png';
+import icon4 from '../../assets/icon_4.png';
+import icon5 from '../../assets/icon_5.png';
+import icon6 from '../../assets/icon_6.png';
+import icon7 from '../../assets/icon_7.png';
+import icon8 from '../../assets/icon_8.png';
+import icon9 from '../../assets/icon_9.png';
+import icon10 from '../../assets/icon_10.png';
+import icon11 from '../../assets/icon_11.png';
+import icon12 from '../../assets/icon_12.png';
 
-const ResponsiveTabbedList = () => {
-  // Lista de objetos para mostrar
-  const dataList = [
-    {
-      id: 1,
-      title: "Ritual 1",
-      subtitle: "Un nuevo comienzo",
-      description_1: "Descripción del Ritual 1",
-      description_2: "Descripción del Ritual 1",
-      description_3: "Descripción del Ritual 1",
-      img: "/src/assets/header_img.jpg",
-    },
-    {
-      id: 2,
-      title: "Ritual 2",
-      subtitle: "Contemplación",
-      description_1: "Descripción del Ritual 2",
-      description_2: "Descripción del Ritual 2",
-      description_3: "Descripción del Ritual 2",
-      img: "/src/assets/header_img.jpg",
-    },
-    {
-      id: 3,
-      title: "Ritual 3",
-      subtitle: "Prueba de fuego",
-      description_1: "Descripción del Ritual 3",
-      description_2: "Descripción del Ritual 3",
-      description_3: "Descripción del Ritual 3",
-      img: "/src/assets/header_img.jpg",
-    },
-    {
-      id: 4,
-      title: "Ritual 4",
-      subtitle: "Bienvenida a la Tribu",
-      description_1: "Descripción del Ritual 4",
-      description_2: "Descripción del Ritual 4",
-      description_3: "Descripción del Ritual 4",
-      img: "/src/assets/header_img.jpg",
-    },
-    {
-      id: 5,
-      title: "Ritual 5",
-      subtitle: "Siembra",
-      description_1: "Descripción del Ritual 5",
-      description_2: "Descripción del Ritual 5",
-      description_3: "Descripción del Ritual 5",
-      img: "/src/assets/header_img.jpg",
-    },
-    {
-      id: 6,
-      title: "Ritual 6",
-      subtitle: "Cosecha",
-      description_1: "Descripción del Ritual 6",
-      description_2: "Descripción del Ritual 6",
-      description_3: "Descripción del Ritual 6",
-      img: "/src/assets/header_img.jpg",
-    },
-    {
-      id: 7,
-      title: "Ritual 7",
-      subtitle: "Proyección",
-      description_1: "Descripción del Ritual 7",
-      description_2: "Descripción del Ritual 7",
-      description_3: "Descripción del Ritual 7",
-      img: "/src/assets/header_img.jpg",
-    },
-  ];
 
-  // Estado para rastrear la pestaña activa
-  const [activeIndex, setActiveIndex] = useState(0);
+const icons = [
+  {
+    id: 1,
+    label: "Entrenamiento Quincenal",
+    content: "Las chicas de la tribu tienen una capacitación sobre procesos de la industria cada quince días. Ángulos, persuasión de usuarios, cierres comerciales, shows, promociones. Sumado a un conversatorio con administración sobre ideas del entrenamiento. Se informa a través de los grupos de turno.",
+    image: icon1,
+  },  
+  {
+    id: 2,
+    label: "Retroalimentaciones Quincenales",
+    content: "Mediante un análisis dofa, administración y monitoreo te entrega un reporte de tus Fortalezas, oportunidades y debilidades. Para mantener o trabajar en ellas la siguiente quincena. Sumado con planeación de shows.",
+    image: icon2,
+  },
+  {
+    id: 3,
+    label: "Manager",
+    content: "Contaras con la ayuda y seguimiento de un equipo capacitado en monitoreo, fotografía, perfilamiento, asesoría, mentoría, capacitaciones, etc.",
+    image: icon3,
+  },
+  {
+    id: 4,
+    label: "No Multas",
+    content: "No nos gustan las multas, creemos mas bien en acciones de mejora. Quitarte el dinero no es una opción; al contrario de ello, tenemos mecanismos de balotas y penitencias para mejorar tus faltas conjuntamente.",
+    image: icon4,
+  },
+  {
+    id: 5,
+    label: "Descuento en Juguetería",
+    content: "Obtendrás un amplio catálogo con tres beneficios. 1. Plan de trabajo escalonado con juguetería después de tus primeros 15 días; 2. Beneficio de pago por cuotas; 3. Precio de importación al 50% de cualquier establecimiento.",
+    image: icon5,
+  },
+  {
+    id: 6,
+    label: "Premios Grupales",
+    content: "Por un % organizado previamente con monitoreo y administración, quincenalmente podrás acceder a premios grupales tales como: Salidas, Cine, Spa, Restaurantes, viajes etc.",
+    image: icon6,
+  },
+  {
+    id: 7,
+    label: "Plan Fotográfico",
+    content: "Tendrás un plan organizado de fotografía. Inicial, diario, mensual y además shows en fechas especiales.",
+    image: icon7,
+  },
+  {
+    id: 8,
+    label: "Alojamiento Gratuito",
+    content: "Si vives en otra ciudad o lejos del estudio te podrías acoplar a la opción Roomate, donde tendrás alojamiento gratuito en el studio con zona de descanso, servicios incluidos, y bono de alimentación en algunos casos. (Pregunta por él).",
+    image: icon8,
+  },
+  {
+    id: 9,
+    label: "Adelantos Monetarios",
+    content: "En cualquier urgencia que se te presente obtendrás un adelanto de tu quincena para solucionar esos impases diarios.",
+    image: icon9,
+  },
+  {
+    id: 10,
+    label: "Organización",
+    content: "Todos y cada uno de los planes de trabajo son diferentes para cada modelo. Dependiendo de perfilamiento, asesoría, aptitudes, inseguridades y cualidades. Una organización completa en tu plan de trabajo.",
+    image: icon10,
+  },
+  {
+    id: 11,
+    label: "Acompañamiento",
+    content: "Además de los planes negocio, financiero y de trabajo. Tendrás varios reportes de ayuda como: reporte para modelos con experiencia, Tablero de shows y asistencia, grupos por turno, mensajes de resúmenes a capacitaciones, caps proceso personal, podscast semanales, etc.",
+    image: icon11,
+  },
+  {
+    id: 12,
+    label: "Implementos de aseo",
+    content: "El estudio te ofrece los implementos de ases para que pueda entregar tu espacio de trabajo aseado: Escoba, recogedor, trapero, limpia pisos, jabones, alcohol, limpia vidrio y paño microfibra. (Por espacio de trabajo).",
+    image: icon12,
+  }
+];
 
-  // Estado para rastrear si la vista es móvil o no
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Estado para manejar el voltear de la tarjeta
-  const [flipped, setFlipped] = useState(false);
 
-  // Evento para actualizar `isMobile` cuando la ventana cambia de tamaño
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Calcular las pestañas visibles dinámicamente (para móvil)
-  const getVisibleTabs = () => {
-    const total = dataList.length;
-
-    return [
-      dataList[(activeIndex - 1 + total) % total], // Pestaña anterior (Cíclica)
-      dataList[activeIndex], // Pestaña actual
-      dataList[(activeIndex + 1) % total], // Pestaña siguiente (Cíclica)
-    ];
-  };
-
-  // Determinar las pestañas visibles según si es móvil o no
-  const visibleTabs = isMobile ? getVisibleTabs() : dataList;
-
-  // Función para alternar el estado del voltear
-  const handleFlip = () => {
-    setFlipped(!flipped);
-  };
+export default function IconSlider() {
+  const [selectedIcon, setSelectedIcon] = useState(null);
 
   return (
-    <div className="">
-      <h1>Bienvenida a Ritual</h1>
-      {/* Barra de pestañas */}
-      <div className="arrows-container mx-3">
-        {visibleTabs.map((item) => (
+    <div className="w-full max-w-5xl mx-auto px-4 py-6 space-y-6">
+      {/* Carrusel scroll horizontal */}
+      <div id="overflow-box" className="overflow-x-auto whitespace-nowrap scrollbar-hide">
+        {icons.map((icon) => (
           <button
-            className="arrow"
-            key={item.id}
-            style={{
-              cursor: "pointer",
-              backgroundColor:
-                dataList[activeIndex].id === item.id
-                  ? "var(--color-2)"
-                  : "var(--color-1)",
-              color: dataList[activeIndex].id === item.id ? "#fff" : "#000",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              flexShrink: 0, // Evitar que las pestañas se reduzcan
-            }}
-            onClick={() => setActiveIndex(dataList.indexOf(item))} // Cambiar índice activo
+            key={icon.id}
+            onClick={() => setSelectedIcon(icon)}
+            className={`inline-block align-top mx-2 rounded-xl border p-2 transition duration-200 ${
+              selectedIcon?.id === icon.id ? "border-blue-500 bg-blue-100" : "border-gray-200"
+            }`}
+            class="button-icon"
           >
-            {item.title}
+            <img
+              src={icon.image}
+              alt={icon.label}
+              class="icons"
+              className="icons"
+            />
           </button>
         ))}
       </div>
 
-      {/* Mostrar contenido del objeto activo */}
-
-      <div className="card" onClick={handleFlip}>
-        <div
-          className={`card-inner ${flipped ? "flipped" : ""}`}
-          style={{
-            position: "relative",
-            transformStyle: "preserve-3d",
-            transition: "transform 1s",
-            height: "100%",
-            width: "100%",
-          }}
-        >
-          <div
-            className="card-front"
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              backfaceVisibility: "hidden",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              className="card-img"
-              src={dataList[activeIndex].img}
-              alt="Card Front"
-              object-fit="cover"
-              height="100%"
-              width="100%"
-            />
-          </div>
-
-          <div
-            className="card-back"
-            style={{
-              width: "100%",
-              height: "100%",
-              backfaceVisibility: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              transform: "rotateY(180deg)",
-            }}
-          >
-            <h2>{dataList[activeIndex].subtitle}</h2>
-            <p>{dataList[activeIndex].description_1}</p>
-            <p>{dataList[activeIndex].description_2}</p>
-            <p>{dataList[activeIndex].description_3}</p>
-          </div>
+      {/* Contenido seleccionado */}
+      {selectedIcon && (
+        <div className="rounded-2xl border shadow mt-4 p-4 bg-white">
+          <h2 className="text-xl font-semibold mb-2">{selectedIcon.label}</h2>
+          <p>{selectedIcon.content}</p>
         </div>
-      </div>
-      <img src={patron} className="separador"></img>
+      )}
     </div>
   );
-};
-
-export default ResponsiveTabbedList;
+}

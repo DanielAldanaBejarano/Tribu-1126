@@ -21,15 +21,11 @@
   padding-right: 2rem;
 }
 
-h2,
-p {
-  color: var(--color-5) !important;
-}
-
-.card {
-  height: 20rem !important;
+.card {  
   margin: 3rem;
+  padding: 1rem;
   justify-content: center;
+  background-color: var(--color-2);
 }
 
 .card-inner.flipped {
@@ -42,8 +38,27 @@ p {
 
 .card-back {
   transform: rotateY(180deg); /* La parte posterior se voltea */
+  background-color: var(--color-2);
 }
 
 .card-img {
   border-radius: 20px !important;
+}
+
+
+/* globals.css */
+#overflow-box {
+  overflow-x: auto !important; 
+  white-space: nowrap !important;
+  scrollbar-width: hide !important;
+}
+
+.icons {
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 15%;
+}
+
+.button-icon:hover {
+  background-color: var(--color-2);
 }

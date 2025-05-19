@@ -1,5 +1,5 @@
 .header-main {
-  height: 93%;
+  height: 95%;
   display: flex;
   flex-direction: column;
   background-color: var(--color-4);
@@ -22,37 +22,36 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(1px);
-  filter:brightness(60%);
+  filter:brightness(90%);
 }
 
 .header-img-txt {
   position: absolute; 
   left: 0; 
   right: 0; 
-  top: 46%;  
-  color: var(--color-4) !important;
+  bottom: 0;
+  color: var(--color-2);
+  stroke-width: black;
 }
 
 .header-txt {
   display: flex;
   flex-direction: column;
-  color: var(--color-2) !important;
+  color: var(--color-3) !important;
 }
 
 p {
-  margin-bottom: 0% !important;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
 }
 
 .header-btn {
-  background-color: var(--color-5) !important;
+  background-color: var(--color-1) !important;
+  position: absolute;
+  width: 10rem; 
+  transform: translate(-50%, -50%)
 }
 
-.header-slogan {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 3em;
-  background-color: var(--color-2);
-  color: var(--color-4);
+.header-btn:hover {
+  background-color: var(--color-5) !important;
 }

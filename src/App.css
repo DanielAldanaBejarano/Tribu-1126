@@ -20,5 +20,69 @@ h1 {
   object-fit: cover;
   max-width: none;
   width: 100%;
-  height: 5rem;
+  height: 60PX;
 }
+
+.navbar {
+  position: absolute;
+  position: sticky;
+  z-index: 3;
+  padding: 0 !important; 
+  background-color: var(--color-3); 
+  
+  .logo {
+    height: 3.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .icon {
+    width: 100%;
+  }
+}
+
+#navbar-btn {
+  padding: 0%;
+  width: 4rem;
+  border: none;
+  border-left-style: solid;
+  border-color: var(--color-5);
+  cursor: pointer;
+  background-color: var(--color-3);
+  color: var(--color-4);
+}
+
+#navbar-btn:focus {
+  background-color: var(--color-2);
+  color: var(--color-4);
+}
+
+.navbar-links-div {
+  width: 40%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  top: 100%;
+  z-index: 10;
+  background-color: var(--color-3);
+}
+
+.navbar-link {  
+  border-style: solid;
+  text-decoration: none;
+  padding: 0.5rem;
+  padding-top: 0;
+  border-width: 1.5px;
+  color: var(--color-2);
+}
+
+.navbar-link:hover {
+  background-color: var(--color-2);
+  color: var(--color-4); 
+}
+
+.title_img {
+  width: 100%;
+}
+
+

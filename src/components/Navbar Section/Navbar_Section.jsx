@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./Navbar_Section.css";
-import logo from "../../assets/logo.png";
-import icon from "../../assets/icon.png";
+import logo from "./assets/logo.png";
+import icon from "./assets/icon.png";
+
+import Ritual_Section from "../../components/Ritual Section/Ritual_Section";
 
 function Navbar_Section() {
+
+  const sectionRef = useRef(null);
+
+  const handleScroll = () => {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -16,9 +25,9 @@ function Navbar_Section() {
       </a>
       {isOpen && (
         <div className="navbar-links-div">
-          <a className="navbar-link" href="/products">
-            Sección 1
-          </a>
+          <button className="navbar-link" href="" onClick={handleScroll}>
+            Nuestro Ritual
+          </button>
           <a className="navbar-link" href="/products">
             Sección 2
           </a>
@@ -33,6 +42,7 @@ function Navbar_Section() {
           </a>
         </div>
       )}
+      <Ritual_Section ref={sectionRef} />
     </nav>
   );
 }

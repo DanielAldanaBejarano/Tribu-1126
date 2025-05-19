@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import "./Tribu_Section.css";
 import patron from "../../assets/patron_1.png";
 
-const ResponsiveTabbedList = () => {
+const ResponsiveTabbedList = forwardRef((props, ref) => {
   const dataList = [
     {
       id: 1,
@@ -12,15 +12,6 @@ const ResponsiveTabbedList = () => {
       description_2: "Descripción Norman",
       description_3: "Descripción Norman",
       img: "/src/assets/norman_avatar.png",
-    },
-    {
-      id: 2,
-      title: "Shaan 2",
-      subtitle: "Nicolás",
-      description_1: "Descripción del Nicolás",
-      description_2: "Descripción del Nicolás",
-      description_3: "Descripción del Nicolás",
-      img: "/src/assets/nicolas_avatar.png",
     },
   ];
 
@@ -36,13 +27,13 @@ const ResponsiveTabbedList = () => {
   };
 
   return (
-    <div>
+    <div ref={ref} className="my-5 mx-3">
       <h1>Esta es nuestra Tribu</h1>
-      <h2>Shamanes</h2>
+      <h2>Patriarca</h2>
+      <h4>El patriarca es administrador, figura de ayuda y liderazgo que te ayudará en todo tu proceso de capacitación, asesoría financiera, apoyo psicológico y retroalimentación.</h4>
 
       {dataList.map((item) => (
-        <div key={item.id}>
-          <h3>{item.subtitle}</h3>
+        <div key={item.id}>          
           <div className="card" onClick={() => handleFlip(item.id)}>
             <div className={`card-inner ${flippedCards[item.id] ? "flipped" : ""}`}>
               <div className="card-front">
@@ -59,9 +50,13 @@ const ResponsiveTabbedList = () => {
         </div>
       ))}
 
+      <h2>Guerrero</h2>
+      <h2>Shamanes</h2>
+      <h2>Curanderos</h2>
+
       <img src={patron} className="separador" alt="Separador" />
     </div>
   );
-};
+});
 
 export default ResponsiveTabbedList;
